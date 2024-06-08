@@ -20,5 +20,12 @@ export class SecurityService {
                 audience: "users"
               })
         }
-    }
+    };
+
+    checkToken(token:string){
+      return this.jwtService.verify(token,{
+           issuer: "login",
+           audience: "users"
+      })
+    };
 }
